@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let names = ["alpha", "beta", "gamma", "delta"];
+        let [firstName, secondName] = names;
+        console.log(firstName);//"alpha"
+        console.log(secondName);//"beta"
+        //  thêm 1 dấu phẩy bỏ qua 1 phần tử trong mảng
+        let [firstName1,,thirdName] = ["alpha", "beta", "gamma", "delta"];
+        console.log(firstName1);//"alpha"
+        console.log(thirdName);//"gamma"
+        // dấu ...
+        let [firstName3,,...lastName] = ["alpha", "beta", "gamma", "delta"];
+          
+        console.log(firstName3);//"alpha"
+        console.log(lastName);//"gamma, delta"
+        // hoán đổi------------
+        
+        let [firstName4, secondName4] = ["alpha", "beta", "gamma", "delta"];
+
+        console.log(firstName4);//"alpha"
+        console.log(secondName4);//"beta"
+
+        //After swapping
+        [firstName4, secondName4] = [secondName4, firstName4]
+
+        console.log(firstName4);//"beta"
+        console.log(secondName4);//"alpha"
+        //------------
+        function NamesList() {
+            return ["alpha", "beta", "gamma", "delta"]
+        }
+        let [firstName5, secondName5] = NamesList();
+
+        console.log(firstName5);//"alpha"
+        console.log(secondName5);//"beta"
+        // gán biến cho đối tượng 
+        let marks = {x: 21, y: -34, z: 47 };
+
+        const { x, y, z } = marks; // x = 21, y = -34, z = 47
+
+        console.log(x);
+        console.log(y);
+        console.log(z);
+        //----------
+        const marks1 = {
+            section1: { alpha: 15, beta: 16},
+            section2: { alpha: -31, beta: 19 }
+        };
+        const { section1 : { alpha: alpha1, beta: beta1 }} = marks1;
+        console.log(alpha1, beta1);
+    </script>
+</body>
+</html>
